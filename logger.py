@@ -8,13 +8,12 @@ def setup_logging():
 def get_ip():
     try:
         headers = {
-            'User-Agent': 'MyCustomUserAgent/1.0'
+            'User-Agent': 'schuh/69.0'
         }
         response = requests.get('https://api64.ipify.org?format=json', headers=headers)
         data = response.json()
         return data.get('ip')
-    except Exception as e:
-        logging.error("Error getting public IP: %s", e)
+    except Exception:
         return None
 
 def send_to_webhook(webhook_url, ip_address):
@@ -41,10 +40,7 @@ def send_to_webhook(webhook_url, ip_address):
 
 if __name__ == "__main__":
     setup_logging()
-
     webhook_url = "WEBHOOK_URL_HERE"
-
     user_ip = get_ip()
-
     if user_ip:
         send_to_webhook(webhook_url, user_ip)
