@@ -1,6 +1,4 @@
-import requests
-import logging
-import datetime
+import requests, logging, datetime
 
 def setup_logging():
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
