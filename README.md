@@ -4,4 +4,4 @@ Required Modules:
 
 requests, logging, datetime
 
-* # This code is for educational purposes only.
+*# This code is for educational purposes only.
